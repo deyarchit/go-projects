@@ -1,0 +1,15 @@
+// The version of protobuf
+syntax = "proto3";
+
+// v1 specifies the major version of the api, if breaking changes are made to the 
+// api then a new version needs to be defined. Otherwise in most cases field versionoing
+// is sufficient
+package log.v1;
+
+option go_package = "github.com/deyboy90/go-projects/proglog/api/log_v1";
+
+// Each field is immmutable, needs to have a type, name, unique field number
+message Record {
+    bytes value = 1;
+    uint64 offset = 2;
+}
